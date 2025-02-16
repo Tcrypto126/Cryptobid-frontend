@@ -7,11 +7,22 @@ const ThemeProvider = dynamic(() => import("@/providers/themeProvider"), { ssr: 
 const JotaiProvider = dynamic(() => import("@/providers/jotaiProvider"), { ssr: false });
 const NotificationProvider = dynamic(() => import("@/providers/notificationProvider"), { ssr: false });
 
+import { NextUIProvider } from "@nextui-org/react";
 
 const ThemeClient = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    {children}
+    <ThemeProvider>
+      <NextUIProvider>
+        <JotaiProvider>
+          <NotificationProvider>
+            {children}
+          </NotificationProvider>
+        </JotaiProvider>
+      </NextUIProvider>
+    </ThemeProvider>
   )
 };
+
+export default ThemeClient;
