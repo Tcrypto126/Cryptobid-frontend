@@ -19,3 +19,68 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: "Brightown";
+  src: url("/assets/font/Brightown.otf"), format("otf");
+}
+
+@font-face {
+  font-family: "Onest";
+  src: url("/assets/font/Onest.ttf"), format("ttf");
+}
+
+h1 {
+  @apply text-[55px] sm:text-[75px] font-["Brightown"];
+  font-weight: 400;
+  line-height: 100%;
+  color: white;
+}
+
+h2 {
+  @apply text-[40px] sm:text-[75px] font-["Brightown"];
+  font-weight: 400;
+  line-height: 90%;
+  color: white;
+}
+
+h3 {
+  @apply text-[24px] sm:text-[45px] font-["Brightown"];
+  font-weight: 400;
+  line-height: 90%;
+  color: white;
+}
+
+h4 {
+  @apply text-[18px] sm:text-[30px] font-["Brightown"];
+  font-weight: 400;
+  line-height: 90%;
+  color: white;
+}
+
+h5 {
+  @apply text-[20px] sm:text-[25px] font-["Brightown"];
+  font-weight: 400;
+  line-height: 90%;
+  color: white;
+}
+
+p {
+  @apply text-zinc-400 font-["Onest"];
+}
+
+a {
+  @apply text-white;
+}
+
+@media (max-width: 640px) {
+  p {
+    @apply text-[14px]
+  }
+  span {
+    @apply text-[14px]
+  }
+  a {
+    @apply text-xs
+  }
+}
