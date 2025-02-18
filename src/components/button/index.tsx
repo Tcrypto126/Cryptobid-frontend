@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@nextui-org/react";
 import { twMerge } from "tailwind-merge";
 
@@ -22,28 +21,30 @@ const PrimaryButton: FC<ButtonProps> = ({
   varient="large",
   isPrimary,
   isIconOnly,
-  className,
   icon,
   disabled,
-  onClick,
-  children,
+  className,
+  children, 
+  onClick, 
 }) => {
   return (
-    <Button
+    <Button 
       type={type}
       isIconOnly={isIconOnly}
-      className={twMerge(`bg-[#27272A] text-white rounded-md h-auto py-[8px] sm:px-[25px] sm:py-[14px] text-xs sm:text-sm`,
+      className={twMerge(
+        `bg-[#27272A] text-white rounded-md h-auto py-[8px] sm:px-[25px] sm:py-[14px] text-xs sm:text-sm`, 
         isPrimary && 'bg-[#EC010F]',
         varient === "small" && "sm:px-[14px] sm:py-[10px]",
         className
       )}
+      
       disabled={disabled}
       startContent={icon}
-      onPress={onClick}
+      onClick={onClick}
     >
       {children}
     </Button>
-  )
+  );
 };
 
 export default PrimaryButton;

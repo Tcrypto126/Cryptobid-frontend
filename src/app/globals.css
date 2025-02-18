@@ -3,70 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+width
+::-webkit-scrollbar {
+  width: 10px;
+  background: #071C2E;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #96717150;
 }
 
-@font-face {
-  font-family: "Brightown";
-  src: url("/assets/font/Brightown.otf"), format("otf");
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2a4964;
+  border-radius: 5px;
+  right: 10px;
 }
 
-@font-face {
-  font-family: "Onest";
-  src: url("/assets/font/Onest.ttf"), format("ttf");
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 h1 {
-  @apply text-[55px] sm:text-[75px] font-["Brightown"];
+  @apply text-[55px] sm:text-[85px] font-brightown;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 90%;
   color: white;
 }
 
 h2 {
-  @apply text-[40px] sm:text-[75px] font-["Brightown"];
+  @apply text-[40px] sm:text-[65px] font-brightown;
   font-weight: 400;
   line-height: 90%;
   color: white;
 }
 
 h3 {
-  @apply text-[24px] sm:text-[45px] font-["Brightown"];
-  font-weight: 400;
-  line-height: 90%;
-  color: white;
-}
-
-h4 {
-  @apply text-[18px] sm:text-[30px] font-["Brightown"];
+  @apply text-[24px] sm:text-[45px] font-brightown;
   font-weight: 400;
   line-height: 90%;
   color: white;
 }
 
 h5 {
-  @apply text-[20px] sm:text-[25px] font-["Brightown"];
+  @apply text-[20px] sm:text-[25px] font-brightown;
+  font-weight: 400;
+  line-height: 90%;
+  color: white;
+}
+
+h4 {
+  @apply text-[18px] sm:text-[30px] font-brightown;
   font-weight: 400;
   line-height: 90%;
   color: white;
 }
 
 p {
-  @apply text-zinc-400 font-["Onest"];
+  @apply text-zinc-400 font-onest;
+}
+
+span {
+  @apply text-white;
 }
 
 a {
@@ -75,12 +80,59 @@ a {
 
 @media (max-width: 640px) {
   p {
-    @apply text-[14px]
+    @apply text-[14px];
   }
   span {
-    @apply text-[14px]
+    @apply text-[14px];
   }
   a {
-    @apply text-xs
+    @apply text-xs;
   }
+}
+
+.post-div:hover .close-btn{
+  opacity: 1;
+  visibility: visible;
+}
+
+@font-face {
+  font-family: 'Onest';
+  src: url('/assets/font/Onest.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .place-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+img[src=''] {
+  visibility: hidden;
 }
