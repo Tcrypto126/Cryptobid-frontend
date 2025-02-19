@@ -21,6 +21,8 @@ import {
 } from "@nextui-org/react";
 
 import PrimaryButton from "@/components/button";
+import { AuthContext } from "@/providers/authProvider";
+import { useUserStore } from "@/store";
 
 const Header = () => {
   const menuItems = [
@@ -31,15 +33,17 @@ const Header = () => {
   ];
 
   const router = useRouter();
+  const { signout, user } = useUserStore();
+  const { sessionData, setVisibleAuthForm } = React.useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [sessionData, setSessionData] = React.useState(false);
+  // const [sessionData, setSessionData] = React.useState(false);
 
   const handleRegisterClick = () => {
-    alert("sign up");
+    setVisibleAuthForm("SIGN_UP");
   };
 
   const handleLoginClick = () => {
-    alert("sign in");
+    setVisibleAuthForm("SIGN_IN");
   };
   const handleSignOut = () => {
     alert("Sign out");
@@ -162,7 +166,7 @@ const Header = () => {
         className=" flex-1 hidden md:flex justify-end"
         justify="end"
       >
-        {sessionData && (
+        {!sessionData && (
           <>
             <NavbarItem className="flex gap-4">
               <PrimaryButton
@@ -183,7 +187,7 @@ const Header = () => {
             </NavbarItem>
           </>
         )}
-        {!sessionData && profileDropdown()}
+        {sessionData && profileDropdown()}
       </NavbarContent>
 
       <NavbarMenu className=" top-[100px] bg-transparent">
