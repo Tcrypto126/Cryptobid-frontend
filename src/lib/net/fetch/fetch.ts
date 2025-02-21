@@ -17,7 +17,7 @@ export const fetchServer = async (
   method = "GET"
 ) => {
   if (!path.startsWith("http")) {
-    path = urlJoin(process.env.NEXT_PUBLIC_API_BASE_URL!, path);
+    path = urlJoin(process.env.EXPRESS_PUBLIC_API_BASE_URL!, path);
   }
 
   const headers: HeadersInit = {
@@ -59,7 +59,7 @@ export const postServer = (
   path: string,
   body?: Record<string, unknown>,
   params?: Record<string, unknown>
-) => putServer(path, body, params, "PUT");
+) => putServer(path, body, params, "POST");
 
 export const deleteServer = (
   path: string,

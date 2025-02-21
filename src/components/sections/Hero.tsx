@@ -2,6 +2,7 @@ import Section from "../SectionContainer";
 import Container from "../container";
 import PrimaryButton from "../button";
 import Image from "next/image";
+import { Input as NextUIInput } from "@nextui-org/react";
 
 const HeroSection = () => {
   return (
@@ -14,6 +15,9 @@ const HeroSection = () => {
         <p>
           description
         </p>
+        <div>
+          <NextUIInput/>
+        </div>
         <div>
           <PrimaryButton
             isPrimary

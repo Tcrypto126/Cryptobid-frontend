@@ -11,9 +11,11 @@
   "dependencies": {
     "@iconify/react": "^5.2.0",
     "@nextui-org/react": "^2.6.11",
+    "@radix-ui/react-scroll-area": "^1.2.3",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.0.4",
     "framer-motion": "^12.4.3",
     "http-status-codes": "^2.3.0",
     "jotai": "^2.12.0",

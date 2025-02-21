@@ -12,7 +12,7 @@ type AuthForm = 'SIGN_IN' | 'SIGN_UP';
 
 type AuthSession = {
   _id: string;
-  name: string;
+  name?: string;
   email: string;
   image?: string;
 }

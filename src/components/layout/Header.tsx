@@ -109,7 +109,7 @@ const Header = () => {
   return (
     <Navbar
       classNames={{
-        wrapper: "relative border flex gap-2 px-4 h-[100px] w-full max-w-[1440px] ",
+        wrapper: "relative flex gap-2 px-4 h-[100px] w-full max-w-[1440px] ",
         base: "fixed bg-transparent backdrop-blur-sm w-[100%]",
       }}
       isBordered
@@ -182,7 +182,7 @@ const Header = () => {
                 className=" font-bold w-[105px]"
                 onClick={handleLoginClick}
               >
-                sign in
+                Sign in
               </PrimaryButton>
             </NavbarItem>
           </>
